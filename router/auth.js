@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send("this is my router auth page");
-});
-
+router.use(express.json());
+// Route to handle POST requests for user registration
 router.post('/register', (req, res) => {
-    req.body;
-    res.send("successfully data submit");
+    console.log(req.body); // Should log the incoming JSON data
+    // If everything is provided, send back the data
+    res.json({ message: "Data received successfully", data: req.body });
 });
 
 module.exports = router;

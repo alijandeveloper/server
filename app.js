@@ -7,7 +7,7 @@ const express = require('express');
 const app = express();
 
 app.use(require('./router/auth'));
- 
+ app.use(express.json());
 // const User = require("./model/userSchema");
 
 
@@ -23,9 +23,7 @@ const middleware = (req, res, next) => {
 };
 
 // Define Routes
-// app.get('/', (req, res) => {
-//     res.send("Hello World, This is My Home Page");
-// });
+
 // app.get('/aboutus', middleware, (req, res) => {
 //     res.send("Hello World, This is My About Us Page");
 // });
